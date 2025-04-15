@@ -4,7 +4,7 @@ import { Agent, BusinessUnit, AgentSource, DashboardStats } from '@/types';
 export const businessUnits: BusinessUnit[] = [
   {
     id: 'bu1',
-    name: 'Banking and Financial',
+    name: 'Banking and Financial Services',
     description: 'Financial services and banking solutions',
     color: '#3B82F6', // blue
   },
@@ -62,8 +62,8 @@ export const agentSources: AgentSource[] = [
 export const agents: Agent[] = [
   {
     id: 'agent1',
-    name: 'Sales Assistant',
-    description: 'Handles lead qualification and initial sales inquiries',
+    name: 'Regulatory Change Agent',
+    description: 'Continuously scans and maps regulatory changes to impacted policies/procedures',
     businessUnitId: 'bu1',
     sourceId: 'src2',
     status: 'active',
@@ -75,13 +75,13 @@ export const agents: Agent[] = [
       completedTasks: 5240,
     },
     type: 'Conversational',
-    version: '2.3.0',
-    owner: 'Sarah Johnson',
+    version: '1.0.0',
+    owner: 'Parag Y Shetye',
   },
   {
     id: 'agent2',
-    name: 'Market Analyzer',
-    description: 'Analyzes market trends and competitor activities',
+    name: 'Loan Approval Agent',
+    description: 'Evaluates applications, risk factors, and recommends approval/rejection',
     businessUnitId: 'bu1',
     sourceId: 'src1',
     status: 'active',
@@ -93,13 +93,13 @@ export const agents: Agent[] = [
       completedTasks: 942,
     },
     type: 'Analytical',
-    version: '1.5.1',
-    owner: 'Michael Chen',
+    version: '1.0.1',
+    owner: 'Parag Y Shetye',
   },
   {
     id: 'agent3',
-    name: 'UX Research Assistant',
-    description: 'Collects and analyzes user feedback',
+    name: 'Customer Support Agent',
+    description: 'Manages queries across channels with contextual understanding, reduces support costs, and improves resolution times.',
     businessUnitId: 'bu2',
     sourceId: 'src3',
     status: 'maintenance',
@@ -111,8 +111,8 @@ export const agents: Agent[] = [
       completedTasks: 1245,
     },
     type: 'Research',
-    version: '1.2.0',
-    owner: 'Alex Rivera',
+    version: '1.1.4',
+    owner: 'Krestwolf.ai',
   },
   {
     id: 'agent4',
