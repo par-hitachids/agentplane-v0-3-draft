@@ -1,4 +1,3 @@
-
 import { AgentCard } from './AgentCard';
 import { Agent, BusinessUnit } from '@/types';
 import { getSourceById } from '@/data/mockData';
@@ -33,7 +32,7 @@ export function BusinessUnitSection({ businessUnit, agents }: BusinessUnitSectio
             style={{ backgroundColor: businessUnit.color }}
           ></div>
           <h2 className="text-xl font-semibold flex items-center gap-2">
-            {businessUnit.name}
+            {"Banking and Financial Services"}
             <span className="text-sm font-normal text-muted-foreground flex items-center">
               <Users className="h-4 w-4 mr-1" />
               {agents.length} agents
