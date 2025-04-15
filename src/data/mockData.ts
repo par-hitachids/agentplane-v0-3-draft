@@ -244,7 +244,7 @@ export const agents: Agent[] = [
     id: 'agent11',
     name: 'Email Campaign Manager',
     description: 'Optimizes email marketing campaigns',
-    businessUnitId: 'bu1',
+    businessUnitId: 'bu4',
     sourceId: 'src4',
     status: 'active',
     createdAt: '2023-02-28',
