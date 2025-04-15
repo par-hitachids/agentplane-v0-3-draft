@@ -38,17 +38,17 @@ export const businessUnits: BusinessUnit[] = [
 export const agentSources: AgentSource[] = [
   {
     id: 'src1',
-    name: 'Internal Development',
+    name: 'HitachiDS Development',
     description: 'Built in-house by our AI team',
   },
   {
     id: 'src2',
-    name: 'OpenAI Integration',
+    name: 'Lyzr.AI Agents',
     description: 'Based on OpenAI models and APIs',
   },
   {
     id: 'src3',
-    name: 'Anthropic Integration',
+    name: 'Partner Agents',
     description: 'Using Claude and other Anthropic models',
   },
   {
@@ -65,7 +65,7 @@ export const agents: Agent[] = [
     name: 'Regulatory Change Agent',
     description: 'Continuously scans and maps regulatory changes to impacted policies/procedures',
     businessUnitId: 'bu1',
-    sourceId: 'src2',
+    sourceId: 'src1',
     status: 'active',
     createdAt: '2025-02-15',
     lastActive: '2025-04-15',
@@ -84,7 +84,7 @@ export const agents: Agent[] = [
     description: 'Evaluates applications, risk factors, and recommends approval/rejection',
     businessUnitId: 'bu1',
     sourceId: 'src1',
-    status: 'active',
+    status: 'maintenance',
     createdAt: '2025-01-20',
     lastActive: '2025-04-15',
     performance: {
@@ -102,7 +102,7 @@ export const agents: Agent[] = [
     description: 'Manages queries across channels with contextual understanding, reduces support costs, and improves resolution times.',
     businessUnitId: 'bu1',
     sourceId: 'src3',
-    status: 'maintenance',
+    status: 'active',
     createdAt: '2024-11-10',
     lastActive: '2025-04-05',
     performance: {
