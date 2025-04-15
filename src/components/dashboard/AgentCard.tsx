@@ -2,7 +2,7 @@
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Agent, BusinessUnit, AgentSource } from '@/types';
-import { Clock, Activity, CheckCircle2 } from 'lucide-react';
+import { Clock, Activity, CheckCircle2, ExternalLink } from 'lucide-react';
 
 interface AgentCardProps {
   agent: Agent;
@@ -27,12 +27,25 @@ export function AgentCard({ agent, businessUnit, source }: AgentCardProps) {
     });
   };
 
+  // Generate a demo URL using the agent ID
+  const getDemoUrl = (agentId: string) => {
+    return `https://demo.hitachivantara.com/agents/${agentId}`;
+  };
+
   return (
     <Card className="overflow-hidden hover:shadow-md transition-shadow duration-200">
       <CardHeader className="pb-2" style={{ borderTop: `4px solid ${businessUnit.color}` }}>
         <div className="flex justify-between items-start">
           <div>
-            <h3 className="font-medium text-lg">{agent.name}</h3>
+            <a 
+              href={getDemoUrl(agent.id)} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="font-medium text-lg hover:text-primary flex items-center group"
+            >
+              {agent.name}
+              <ExternalLink className="h-4 w-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
             <p className="text-muted-foreground text-sm">{agent.type}</p>
           </div>
           <Badge 
