@@ -1,36 +1,35 @@
-
 import { Agent, BusinessUnit, AgentSource, DashboardStats } from '@/types';
 
 // Business Units mock data
 export const businessUnits: BusinessUnit[] = [
   {
     id: 'bu1',
-    name: 'Sales & Marketing',
-    description: 'Customer acquisition and relationship management',
+    name: 'Banking and Financial Services',
+    description: 'Financial services and banking solutions',
     color: '#3B82F6', // blue
   },
   {
     id: 'bu2',
-    name: 'Product Development',
-    description: 'Research and development of new products',
+    name: 'Manufacturing',
+    description: 'Industrial production and manufacturing processes',
     color: '#10B981', // emerald
   },
   {
     id: 'bu3',
-    name: 'Customer Support',
-    description: 'Managing customer inquiries and technical support',
+    name: 'Healthcare',
+    description: 'Medical services and healthcare innovations',
     color: '#6366F1', // indigo
   },
   {
     id: 'bu4',
-    name: 'Operations',
-    description: 'Day to day business operations and logistics',
+    name: 'Insurance',
+    description: 'Insurance products and risk management',
     color: '#F59E0B', // amber
   },
   {
     id: 'bu5',
-    name: 'Finance',
-    description: 'Financial planning and accounting',
+    name: 'Connected Industries',
+    description: 'Integrated digital transformation solutions',
     color: '#EC4899', // pink
   },
 ];
