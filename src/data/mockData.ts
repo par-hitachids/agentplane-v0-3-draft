@@ -4,7 +4,7 @@ import { Agent, BusinessUnit, AgentSource, DashboardStats } from '@/types';
 export const businessUnits: BusinessUnit[] = [
   {
     id: 'bu1',
-    name: 'Banking and Financial Services',
+    name: 'Banking and Financial',
     description: 'Financial services and banking solutions',
     color: '#3B82F6', // blue
   },
