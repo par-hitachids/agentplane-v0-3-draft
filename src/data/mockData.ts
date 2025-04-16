@@ -247,7 +247,7 @@ export const agents: Agent[] = [
     description: 'Automates medical insurance claims processing',
     businessUnitId: 'bu3',
     sourceId: 'src1',
-    status: 'Maintenance',
+    status: 'maintenance',
     createdAt: '2024-09-28',
     lastActive: '2024-10-14',
     performance: {
