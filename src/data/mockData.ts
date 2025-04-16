@@ -221,6 +221,7 @@ export const agents: Agent[] = [
     type: 'Responsible AI',
     version: '1.8.2',
     owner: 'Chandra, Pradeep, Ashwin',
+    demoUrl: 'https://hv-rag.us-east-1.elasticbeanstalk.com',
   },
   {
     id: 'agent10',

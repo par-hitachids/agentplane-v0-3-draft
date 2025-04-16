@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Agent, BusinessUnit, AgentSource } from '@/types';
@@ -27,9 +27,10 @@ export function AgentCard({ agent, businessUnit, source }: AgentCardProps) {
     });
   };
 
-  // Generate a demo URL using the agent ID
-  const getDemoUrl = (agentId: string) => {
-    return `https://demo.hitachivantara.com/agents/${agentId}`;
+  // Generate a demo URL using the agent ID or specific demo URL
+  const getDemoUrl = (agent: Agent) => {
+    // Use specific demoUrl if provided, otherwise fall back to default
+    return agent.demoUrl || `https://demo.hitachivantara.com/agents/${agent.id}`;
   };
 
   return (
@@ -38,7 +39,7 @@ export function AgentCard({ agent, businessUnit, source }: AgentCardProps) {
         <div className="flex justify-between items-start">
           <div>
             <a 
-              href={getDemoUrl(agent.id)} 
+              href={getDemoUrl(agent)} 
               target="_blank" 
               rel="noopener noreferrer"
               className="font-medium text-lg hover:text-primary flex items-center group"
