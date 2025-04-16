@@ -294,6 +294,7 @@ export const agents: Agent[] = [
     type: 'Code Generator',
     version: '1.0.0',
     owner: 'Chandra',
+    demoUrl: 'https://tso-ghagent-capp.thankfulflower-bbc92453.centralus.azurecontainerapps.io',
   },
   {
     id: 'agent14',
@@ -312,6 +313,7 @@ export const agents: Agent[] = [
     type: 'Framework',
     version: '1.0.0',
     owner: 'TBD',
+    demoUrl: 'https://maturity-assessment-app.agreeableisland-ccf7e3c4.eastus.azurecontainerapps.io/',
   },
 ];
 
