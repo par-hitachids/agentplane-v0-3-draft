@@ -22,7 +22,7 @@ export function DashboardHeader({ title, onSearchChange }: DashboardHeaderProps)
       <div>
         <h1 className="text-2xl font-bold tracking-tight">{title}</h1>
         <p className="text-muted-foreground">
-          Monitor and manage agents across your organization
+          Monitor and manage agents deployed across Hitachi Digital Services
         </p>
       </div>
       <div className="w-full md:w-80">

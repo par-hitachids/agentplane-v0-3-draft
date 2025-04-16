@@ -19,7 +19,7 @@ export function Navbar() {
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                 <Avatar className="h-8 w-8">
-                  <AvatarFallback>AH</AvatarFallback>
+                  <AvatarFallback>PS</AvatarFallback>
                 </Avatar>
               </Button>
             </DropdownMenuTrigger>
