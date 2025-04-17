@@ -3,7 +3,7 @@ import { Agent, BusinessUnit, AgentSource, DashboardStats } from '@/types';
 // Business Units mock data
 export const businessUnits: BusinessUnit[] = [
   {
-    id: 'bu1',
+    id: 'bu5',
     name: 'Banking and Financial Services',
     description: 'Financial services and banking solutions',
     color: '#3B82F6', // blue
@@ -27,10 +27,10 @@ export const businessUnits: BusinessUnit[] = [
     color: '#F59E0B', // amber
   },
   {
-    id: 'bu5',
+    id: 'bu1',
     name: 'Agentic AI Demos',
     description: 'Agentic AI Solution Demos',
-    color: '#EC4899', // pink
+    color: '#B30100', // Hitachi red
   },
 ];
 
@@ -43,7 +43,7 @@ export const agentSources: AgentSource[] = [
   },
   {
     id: 'src2',
-    name: 'Lyzr.AI Agents',
+    name: 'SaaS Agents',
     description: 'Based on OpenAI models and APIs',
   },
   {
