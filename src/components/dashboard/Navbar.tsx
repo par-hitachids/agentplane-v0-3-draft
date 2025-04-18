@@ -7,8 +7,8 @@ export function Navbar() {
     <div className="flex h-16 items-center px-4 md:px-6 justify-between">
       <div className="font-semibold text-3xl flex items-center gap-2">
         <span style={{
-          color: '#B30100'
-        }}>HARC.Agents - AgentPlane</span>
+          color: '#000000'
+        }}>HARC.Agents - Agentplane</span>
         <span className="text-xs bg-blue-100 text-blue-800 py-0.5 px-2 rounded-full">Beta</span>
       </div>
       
