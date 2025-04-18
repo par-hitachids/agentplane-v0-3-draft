@@ -92,7 +92,7 @@ export const agents: Agent[] = [
     id: 'agent1',
     name: 'Regulatory Change Agent',
     description: 'Continuously scans and maps regulatory changes to impacted policies/procedures',
-    businessFunctionsId: 'func1',
+    businessFunctionId: 'func1',
     businessUnitId: 'bu1',
     sourceId: 'src1',
     status: 'active',
@@ -297,6 +297,11 @@ export const getBusinessUnitById = (id: string): BusinessUnit | undefined => {
 // Helper function to get source by id
 export const getSourceById = (id: string): AgentSource | undefined => {
   return agentSources.find(source => source.id === id);
+};
+
+// Map agents to business functions
+export const mapAgentToFunction = (agent: Agent): BusinessFunction | undefined => {
+  return businessFunctions.find(func => func.id === agent.businessFunctionId);
 };
 
 // Map agents to business functions
