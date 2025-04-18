@@ -31,6 +31,8 @@ export type Agent = {
   type: string;
   version: string;
   owner: string;
+  demoUrl?: string;
+  cost?: number;
 };
 
 export type DashboardStats = {
@@ -38,4 +40,11 @@ export type DashboardStats = {
   activeAgents: number;
   businessUnits: number;
   sources: number;
+};
+
+export type BusinessFunction = {
+  id: string;
+  name: string;
+  description?: string;
+  color?: string;
 };

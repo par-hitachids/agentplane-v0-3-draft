@@ -1,12 +1,14 @@
+
 import { BellIcon, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+
 export function Navbar() {
   return <div className="border-b">
       <div className="flex h-16 items-center px-4 md:px-6">
-        <div className="font-semibold text-lg flex items-center gap-2">
-          <span className="hidden md:inline">HARC.Agents</span>
+        <div className="font-semibold text-xl flex items-center gap-2">
+          <span className="hidden md:inline" style={{ color: '#B30100' }}>HARC.Agents - AgentPlane</span>
           <span className="text-xs bg-blue-100 text-blue-800 py-0.5 px-2 rounded-full">Beta</span>
         </div>
         

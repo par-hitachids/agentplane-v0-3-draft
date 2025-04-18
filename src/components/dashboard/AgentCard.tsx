@@ -1,16 +1,18 @@
+
 import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Agent, BusinessUnit, AgentSource } from '@/types';
-import { Clock, Activity, CheckCircle2, ExternalLink } from 'lucide-react';
+import { Agent, BusinessUnit, AgentSource, BusinessFunction } from '@/types';
+import { Clock, Activity, CheckCircle2, ExternalLink, DollarSign } from 'lucide-react';
 
 interface AgentCardProps {
   agent: Agent;
-  businessUnit: BusinessUnit;
+  businessUnit?: BusinessUnit;
+  businessFunction?: BusinessFunction;
   source: AgentSource;
 }
 
-export function AgentCard({ agent, businessUnit, source }: AgentCardProps) {
+export function AgentCard({ agent, businessUnit, businessFunction, source }: AgentCardProps) {
   // Status colors
   const statusColors = {
     active: 'bg-green-500',
@@ -27,6 +29,17 @@ export function AgentCard({ agent, businessUnit, source }: AgentCardProps) {
     });
   };
 
+  // Get the color for the card header
+  const getHeaderColor = () => {
+    if (businessFunction) {
+      return businessFunction.color;
+    }
+    if (businessUnit) {
+      return businessUnit.color;
+    }
+    return '#cccccc';
+  };
+
   // Generate a demo URL using the agent ID or specific demo URL
   const getDemoUrl = (agent: Agent) => {
     // Use specific demoUrl if provided, otherwise fall back to default
@@ -35,7 +48,7 @@ export function AgentCard({ agent, businessUnit, source }: AgentCardProps) {
 
   return (
     <Card className="overflow-hidden hover:shadow-md transition-shadow duration-200">
-      <CardHeader className="pb-2" style={{ borderTop: `4px solid ${businessUnit.color}` }}>
+      <CardHeader className="pb-2" style={{ borderTop: `4px solid ${getHeaderColor()}` }}>
         <div className="flex justify-between items-start">
           <div>
             <a 
@@ -77,6 +90,12 @@ export function AgentCard({ agent, businessUnit, source }: AgentCardProps) {
             <CheckCircle2 className="h-4 w-4 text-muted-foreground" />
             <span className="text-muted-foreground">Tasks:</span>
             <span className="font-medium">{agent.performance?.completedTasks.toLocaleString() || 0}</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <DollarSign className="h-4 w-4 text-muted-foreground" />
+            <span className="text-muted-foreground">Cost:</span>
+            <span className="font-medium"></span>
           </div>
         </div>
       </CardContent>

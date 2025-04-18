@@ -4,11 +4,10 @@ import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
 interface DashboardHeaderProps {
-  title: string;
   onSearchChange: (search: string) => void;
 }
 
-export function DashboardHeader({ title, onSearchChange }: DashboardHeaderProps) {
+export function DashboardHeader({ onSearchChange }: DashboardHeaderProps) {
   const [searchValue, setSearchValue] = useState('');
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,12 +18,6 @@ export function DashboardHeader({ title, onSearchChange }: DashboardHeaderProps)
 
   return (
     <div className="flex flex-col space-y-4 md:flex-row md:items-center md:justify-between md:space-y-0">
-      <div>
-        <h1 className="text-2xl font-bold tracking-tight">{title}</h1>
-        <p className="text-muted-foreground">
-          Monitor and manage agents deployed across Hitachi Digital Services
-        </p>
-      </div>
       <div className="w-full md:w-80">
         <div className="relative">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />

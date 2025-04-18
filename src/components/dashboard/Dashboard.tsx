@@ -3,15 +3,16 @@ import { useState, useMemo } from 'react';
 import { DashboardHeader } from './DashboardHeader';
 import { DashboardStats } from './DashboardStats';
 import { DashboardFilters } from './DashboardFilters';
-import { BusinessUnitSection } from './BusinessUnitSection';
+import { AgentTabs } from './AgentTabs';
 import { Navbar } from './Navbar';
 
 import { 
   businessUnits, 
+  businessFunctions,
   agentSources, 
   agents, 
   getDashboardStats, 
-  getBusinessUnitById 
+  mapAgentToFunction
 } from '@/data/mockData';
 
 export function Dashboard() {
@@ -78,6 +79,20 @@ export function Dashboard() {
     return grouped;
   }, [filteredAgents]);
 
+  // Group filtered agents by business function
+  const agentsByBusinessFunction = useMemo(() => {
+    const grouped: Record<string, typeof filteredAgents> = {};
+    
+    businessFunctions.forEach(func => {
+      grouped[func.id] = filteredAgents.filter(agent => {
+        const functionId = mapAgentToFunction(agent);
+        return functionId === func.id;
+      });
+    });
+    
+    return grouped;
+  }, [filteredAgents]);
+
   const dashboardStats = getDashboardStats();
 
   return (
@@ -86,15 +101,12 @@ export function Dashboard() {
       
       <div className="flex-1 space-y-6 p-4 md:p-8 pt-6">
         <DashboardHeader 
-          title="Agent Plane Dashboard" 
           onSearchChange={setSearchQuery} 
         />
         
         <DashboardStats stats={dashboardStats} />
         
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl font-semibold">Agents by Business Unit</h2>
-          
+        <div className="flex justify-between items-center mb-2">
           <DashboardFilters 
             businessUnits={businessUnits}
             sources={agentSources}
@@ -105,27 +117,21 @@ export function Dashboard() {
           />
         </div>
         
-        <div className="space-y-6">
-          {businessUnits.map(unit => {
-            const unitAgents = agentsByBusinessUnit[unit.id] || [];
-            return (
-              <BusinessUnitSection 
-                key={unit.id}
-                businessUnit={unit}
-                agents={unitAgents}
-              />
-            );
-          })}
-          
-          {filteredAgents.length === 0 && (
-            <div className="text-center py-12">
-              <h3 className="text-lg font-medium">No agents found</h3>
-              <p className="text-muted-foreground mt-1">
-                Try adjusting your filters or search query
-              </p>
-            </div>
-          )}
-        </div>
+        <AgentTabs 
+          businessFunctions={businessFunctions}
+          businessUnits={businessUnits}
+          agentsByFunction={agentsByBusinessFunction}
+          agentsByBusinessUnit={agentsByBusinessUnit}
+        />
+        
+        {filteredAgents.length === 0 && (
+          <div className="text-center py-12">
+            <h3 className="text-lg font-medium">No agents found</h3>
+            <p className="text-muted-foreground mt-1">
+              Try adjusting your filters or search query
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
