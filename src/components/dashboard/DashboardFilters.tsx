@@ -10,16 +10,18 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { BusinessUnit, AgentSource } from '@/types';
+import { BusinessUnit, AgentSource, BusinessFunction } from '@/types';
 
 interface DashboardFiltersProps {
   businessUnits: BusinessUnit[];
   sources: AgentSource[];
+  businessFunctions: BusinessFunction[];
   selectedBusinessUnits: string[];
   selectedSources: string[];
   selectedStatuses: string[];
+  selectedFunctions: string[];
   onFilterChange: (
-    type: 'businessUnit' | 'source' | 'status',
+    type: 'businessUnit' | 'source' | 'status' | 'function',
     values: string[]
   ) => void;
 }
@@ -27,9 +29,11 @@ interface DashboardFiltersProps {
 export function DashboardFilters({
   businessUnits,
   sources,
+  businessFunctions,
   selectedBusinessUnits,
   selectedSources,
   selectedStatuses,
+  selectedFunctions,
   onFilterChange,
 }: DashboardFiltersProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,54 +41,49 @@ export function DashboardFilters({
   const statuses = ['active', 'inactive', 'maintenance'];
   
   const handleBusinessUnitChange = (id: string) => {
-    let newSelection: string[];
-    
-    if (selectedBusinessUnits.includes(id)) {
-      newSelection = selectedBusinessUnits.filter(unitId => unitId !== id);
-    } else {
-      newSelection = [...selectedBusinessUnits, id];
-    }
-    
+    let newSelection = selectedBusinessUnits.includes(id)
+      ? selectedBusinessUnits.filter(unitId => unitId !== id)
+      : [...selectedBusinessUnits, id];
     onFilterChange('businessUnit', newSelection);
   };
   
   const handleSourceChange = (id: string) => {
-    let newSelection: string[];
-    
-    if (selectedSources.includes(id)) {
-      newSelection = selectedSources.filter(sourceId => sourceId !== id);
-    } else {
-      newSelection = [...selectedSources, id];
-    }
-    
+    let newSelection = selectedSources.includes(id)
+      ? selectedSources.filter(sourceId => sourceId !== id)
+      : [...selectedSources, id];
     onFilterChange('source', newSelection);
   };
   
   const handleStatusChange = (status: string) => {
-    let newSelection: string[];
-    
-    if (selectedStatuses.includes(status)) {
-      newSelection = selectedStatuses.filter(s => s !== status);
-    } else {
-      newSelection = [...selectedStatuses, status];
-    }
-    
+    let newSelection = selectedStatuses.includes(status)
+      ? selectedStatuses.filter(s => s !== status)
+      : [...selectedStatuses, status];
     onFilterChange('status', newSelection);
+  };
+
+  const handleFunctionChange = (id: string) => {
+    let newSelection = selectedFunctions.includes(id)
+      ? selectedFunctions.filter(funcId => funcId !== id)
+      : [...selectedFunctions, id];
+    onFilterChange('function', newSelection);
   };
   
   const resetAllFilters = () => {
     onFilterChange('businessUnit', []);
     onFilterChange('source', []);
     onFilterChange('status', []);
+    onFilterChange('function', []);
   };
   
   const hasActiveFilters = selectedBusinessUnits.length > 0 || 
     selectedSources.length > 0 || 
-    selectedStatuses.length > 0;
+    selectedStatuses.length > 0 ||
+    selectedFunctions.length > 0;
     
   const totalFilterCount = selectedBusinessUnits.length + 
     selectedSources.length + 
-    selectedStatuses.length;
+    selectedStatuses.length +
+    selectedFunctions.length;
     
   return (
     <div className="flex items-center space-x-2">
@@ -102,6 +101,33 @@ export function DashboardFilters({
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-80" align="start">
           <DropdownMenuLabel>Filter Agents</DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          
+          <div className="p-2">
+            <h4 className="mb-2 text-sm font-medium">Business Functions</h4>
+            <div className="space-y-2">
+              {businessFunctions.map(func => (
+                <div key={func.id} className="flex items-center space-x-2">
+                  <Checkbox 
+                    id={`func-${func.id}`} 
+                    checked={selectedFunctions.includes(func.id)}
+                    onCheckedChange={() => handleFunctionChange(func.id)}
+                  />
+                  <label 
+                    htmlFor={`func-${func.id}`}
+                    className="text-sm font-normal cursor-pointer flex items-center gap-2"
+                  >
+                    <div 
+                      className="w-2 h-2 rounded-full" 
+                      style={{ backgroundColor: func.color }}
+                    ></div>
+                    {func.name}
+                  </label>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <DropdownMenuSeparator />
           
           <div className="p-2">

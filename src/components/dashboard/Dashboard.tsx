@@ -1,4 +1,6 @@
 import { useState, useMemo } from 'react';
+import { Search } from 'lucide-react';
+import { Input } from '@/components/ui/input';
 import { DashboardFilters } from './DashboardFilters';
 import { AgentTabs } from './AgentTabs';
 import { Navbar } from './Navbar';
@@ -17,17 +19,25 @@ export function Dashboard() {
   const [selectedBusinessUnits, setSelectedBusinessUnits] = useState<string[]>([]);
   const [selectedSources, setSelectedSources] = useState<string[]>([]);
   const [selectedStatuses, setSelectedStatuses] = useState<string[]>([]);
+  const [selectedFunctions, setSelectedFunctions] = useState<string[]>([]);
 
   const handleFilterChange = (
-    type: 'businessUnit' | 'source' | 'status',
+    type: 'businessUnit' | 'source' | 'status' | 'function',
     values: string[]
   ) => {
-    if (type === 'businessUnit') {
-      setSelectedBusinessUnits(values);
-    } else if (type === 'source') {
-      setSelectedSources(values);
-    } else if (type === 'status') {
-      setSelectedStatuses(values);
+    switch (type) {
+      case 'businessUnit':
+        setSelectedBusinessUnits(values);
+        break;
+      case 'source':
+        setSelectedSources(values);
+        break;
+      case 'status':
+        setSelectedStatuses(values);
+        break;
+      case 'function':
+        setSelectedFunctions(values);
+        break;
     }
   };
 
@@ -54,10 +64,17 @@ export function Dashboard() {
       if (selectedStatuses.length > 0 && !selectedStatuses.includes(agent.status)) {
         return false;
       }
+
+      if (selectedFunctions.length > 0) {
+        const functionId = mapAgentToFunction(agent);
+        if (!selectedFunctions.includes(functionId)) {
+          return false;
+        }
+      }
       
       return true;
     });
-  }, [searchQuery, selectedBusinessUnits, selectedSources, selectedStatuses]);
+  }, [searchQuery, selectedBusinessUnits, selectedSources, selectedStatuses, selectedFunctions]);
 
   const agentsByBusinessUnit = useMemo(() => {
     const grouped: Record<string, typeof filteredAgents> = {};
@@ -88,19 +105,29 @@ export function Dashboard() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Navbar 
-        searchQuery={searchQuery} 
-        onSearchChange={setSearchQuery} 
-      />
+      <Navbar />
       
       <div className="flex-1 space-y-6 p-4 md:p-8 pt-6">
-        <div className="flex justify-between items-center mb-2">
+        <div className="flex justify-end items-center gap-4 mb-2">
+          <div className="relative w-80">
+            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+            <Input
+              type="search"
+              placeholder="Search agents..."
+              className="w-full bg-background pl-8"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+          
           <DashboardFilters 
             businessUnits={businessUnits}
+            businessFunctions={businessFunctions}
             sources={agentSources}
             selectedBusinessUnits={selectedBusinessUnits}
             selectedSources={selectedSources}
             selectedStatuses={selectedStatuses}
+            selectedFunctions={selectedFunctions}
             onFilterChange={handleFilterChange}
           />
         </div>

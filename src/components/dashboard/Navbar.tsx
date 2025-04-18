@@ -1,52 +1,18 @@
 
-import { BellIcon, Settings, Search } from 'lucide-react';
+import { BellIcon, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { DashboardFilters } from './DashboardFilters';
 
-export function Navbar({ 
-  searchQuery, 
-  onSearchChange 
-}: { 
-  searchQuery: string, 
-  onSearchChange: (search: string) => void 
-}) {
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onSearchChange(e.target.value);
-  };
-
+export function Navbar() {
   return <div className="border-b">
     <div className="flex h-16 items-center px-4 md:px-6 space-x-4">
-      <div className="font-semibold text-2xl flex items-center gap-2">
+      <div className="font-semibold text-3xl flex items-center gap-2">
         <span style={{ color: '#B30100' }}>HARC.Agents - AgentPlane</span>
         <span className="text-xs bg-blue-100 text-blue-800 py-0.5 px-2 rounded-full">Beta</span>
       </div>
       
-      <div className="flex-grow max-w-80 ml-4">
-        <div className="relative">
-          <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-          <Input
-            type="search"
-            placeholder="Search agents..."
-            className="w-full bg-background pl-8"
-            value={searchQuery}
-            onChange={handleSearchChange}
-          />
-        </div>
-      </div>
-      
       <div className="ml-auto flex items-center space-x-4">
-        <DashboardFilters 
-          businessUnits={[]} // Placeholder, will be passed from parent
-          sources={[]} // Placeholder, will be passed from parent
-          selectedBusinessUnits={[]}
-          selectedSources={[]}
-          selectedStatuses={[]}
-          onFilterChange={() => {}} // Placeholder
-        />
-
         <Button variant="ghost" size="icon">
           <BellIcon className="h-5 w-5" />
         </Button>
