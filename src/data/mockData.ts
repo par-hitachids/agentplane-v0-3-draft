@@ -1,4 +1,3 @@
-
 import { Agent, BusinessUnit, AgentSource, DashboardStats, BusinessFunction } from '@/types';
 
 // Business Functions
@@ -300,20 +299,17 @@ export const getSourceById = (id: string): AgentSource | undefined => {
 };
 
 // Map agents to business functions
-export const mapAgentToFunction = (agent: Agent): BusinessFunction | undefined => {
-  return businessFunctions.find(func => func.id === agent.businessFunctionId);
-};
-
-// Map agents to business functions
-/*export const mapAgentToFunction = (agent: Agent): string => {
-  if (agent.businessUnitId === 'bu5') {
+export const mapAgentToFunction = (agent: Agent): string => {
+  if (agent.businessFunctionId) {
+    return agent.businessFunctionId;
+  } else if (agent.businessUnitId === 'bu5') {
     return 'func1'; // Agentic AI Demos -> Applied AI
   } else if (agent.businessUnitId === 'bu2') {
     return 'func2'; // Manufacturing -> Industrial AI
   } else {
     return 'func1'; // Everything else -> Applied AI
   }
-};*/
+};
 
 // Get dashboard stats
 export const getDashboardStats = (): DashboardStats => {
