@@ -102,6 +102,14 @@ export function Dashboard() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
+
+      <div className="flex-1 space-y-6 p-4 md:p-8 pt-6">
+  <DashboardStats stats={dashboardStats} />
+  <AgentTabs 
+    // existing props...
+  />
+  {/* rest of the content... */}
+</div>
       
       <div className="flex-1 space-y-6 p-4 md:p-8 pt-6">
         <AgentTabs 
