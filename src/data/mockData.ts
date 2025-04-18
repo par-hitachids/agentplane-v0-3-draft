@@ -92,7 +92,7 @@ export const agents: Agent[] = [
     id: 'agent1',
     name: 'Regulatory Change Agent',
     description: 'Continuously scans and maps regulatory changes to impacted policies/procedures',
-    businessFunctionId: 'func1',
+    businessFunctionsId: 'func1',
     businessUnitId: 'bu1',
     sourceId: 'src1',
     status: 'active',
