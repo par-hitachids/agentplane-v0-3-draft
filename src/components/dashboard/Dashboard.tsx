@@ -1,7 +1,4 @@
-
 import { useState, useMemo } from 'react';
-import { DashboardHeader } from './DashboardHeader';
-import { DashboardStats } from './DashboardStats';
 import { DashboardFilters } from './DashboardFilters';
 import { AgentTabs } from './AgentTabs';
 import { Navbar } from './Navbar';
@@ -36,7 +33,6 @@ export function Dashboard() {
 
   const filteredAgents = useMemo(() => {
     return agents.filter(agent => {
-      // Apply search filter
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
         if (
@@ -47,17 +43,14 @@ export function Dashboard() {
         }
       }
       
-      // Apply business unit filter
       if (selectedBusinessUnits.length > 0 && !selectedBusinessUnits.includes(agent.businessUnitId)) {
         return false;
       }
       
-      // Apply source filter
       if (selectedSources.length > 0 && !selectedSources.includes(agent.sourceId)) {
         return false;
       }
       
-      // Apply status filter
       if (selectedStatuses.length > 0 && !selectedStatuses.includes(agent.status)) {
         return false;
       }
@@ -66,7 +59,6 @@ export function Dashboard() {
     });
   }, [searchQuery, selectedBusinessUnits, selectedSources, selectedStatuses]);
 
-  // Group filtered agents by business unit
   const agentsByBusinessUnit = useMemo(() => {
     const grouped: Record<string, typeof filteredAgents> = {};
     
@@ -79,7 +71,6 @@ export function Dashboard() {
     return grouped;
   }, [filteredAgents]);
 
-  // Group filtered agents by business function
   const agentsByBusinessFunction = useMemo(() => {
     const grouped: Record<string, typeof filteredAgents> = {};
     
@@ -97,15 +88,12 @@ export function Dashboard() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Navbar />
+      <Navbar 
+        searchQuery={searchQuery} 
+        onSearchChange={setSearchQuery} 
+      />
       
       <div className="flex-1 space-y-6 p-4 md:p-8 pt-6">
-        <DashboardHeader 
-          onSearchChange={setSearchQuery} 
-        />
-        
-        <DashboardStats stats={dashboardStats} />
-        
         <div className="flex justify-between items-center mb-2">
           <DashboardFilters 
             businessUnits={businessUnits}
