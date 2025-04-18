@@ -1,10 +1,6 @@
 import { useState, useMemo } from 'react';
-import { Search } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { DashboardFilters } from './DashboardFilters';
 import { AgentTabs } from './AgentTabs';
 import { Navbar } from './Navbar';
-
 import { 
   businessUnits, 
   businessFunctions,
@@ -15,11 +11,11 @@ import {
 } from '@/data/mockData';
 
 export function Dashboard() {
-  const [searchQuery, setSearchQuery] = useState('');
   const [selectedBusinessUnits, setSelectedBusinessUnits] = useState<string[]>([]);
   const [selectedSources, setSelectedSources] = useState<string[]>([]);
   const [selectedStatuses, setSelectedStatuses] = useState<string[]>([]);
   const [selectedFunctions, setSelectedFunctions] = useState<string[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleFilterChange = (
     type: 'businessUnit' | 'source' | 'status' | 'function',
@@ -108,35 +104,19 @@ export function Dashboard() {
       <Navbar />
       
       <div className="flex-1 space-y-6 p-4 md:p-8 pt-6">
-        <div className="flex justify-end items-center gap-4 mb-2">
-          <div className="relative w-80">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Search agents..."
-              className="w-full bg-background pl-8"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
-          
-          <DashboardFilters 
-            businessUnits={businessUnits}
-            businessFunctions={businessFunctions}
-            sources={agentSources}
-            selectedBusinessUnits={selectedBusinessUnits}
-            selectedSources={selectedSources}
-            selectedStatuses={selectedStatuses}
-            selectedFunctions={selectedFunctions}
-            onFilterChange={handleFilterChange}
-          />
-        </div>
-        
         <AgentTabs 
           businessFunctions={businessFunctions}
           businessUnits={businessUnits}
           agentsByFunction={agentsByBusinessFunction}
           agentsByBusinessUnit={agentsByBusinessUnit}
+          sources={agentSources}
+          selectedBusinessUnits={selectedBusinessUnits}
+          selectedSources={selectedSources}
+          selectedStatuses={selectedStatuses}
+          selectedFunctions={selectedFunctions}
+          searchQuery={searchQuery}
+          onFilterChange={handleFilterChange}
+          onSearchChange={setSearchQuery}
         />
         
         {filteredAgents.length === 0 && (
