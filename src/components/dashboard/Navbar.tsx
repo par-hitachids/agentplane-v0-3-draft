@@ -4,7 +4,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 export function Navbar() {
   return <div className="border-b">
-    <div className="flex h-16 items-center px-4 md:px-6 space-x-4">
+    <div className="flex h-16 items-center px-4 md:px-6 justify-between">
       <div className="font-semibold text-3xl flex items-center gap-2">
         <span style={{
           color: '#B30100'
