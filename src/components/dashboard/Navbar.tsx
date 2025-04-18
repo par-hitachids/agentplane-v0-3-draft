@@ -12,7 +12,7 @@ export function Navbar() {
         <span className="text-xs bg-blue-100 text-blue-800 py-0.5 px-2 rounded-full">Beta</span>
       </div>
       
-      <div className="ml-auto flex items-right space-x-4">
+      <div className="ml-auto flex items-center space-x-4">
         <Button variant="ghost" size="icon">
           <BellIcon className="h-5 w-5" />
         </Button>
