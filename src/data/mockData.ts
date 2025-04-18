@@ -51,9 +51,9 @@ export const businessUnits: BusinessUnit[] = [
   },
   {
     id: 'bu5',
-    name: 'Agentic AI Demos',
+    name: 'Hitachi',
     description: 'Demo agents for showcasing AI capabilities',
-    color: '#F44336'
+    color: '#B30100'
   }
 ];
 
@@ -61,28 +61,28 @@ export const businessUnits: BusinessUnit[] = [
 export const agentSources: AgentSource[] = [
   {
     id: 'src1',
-    name: 'OpenAI',
-    description: 'Agents powered by OpenAI models'
+    name: 'HitachiDS Development',
+    description: 'Agents developed by Hitachi Digital Services'
   },
   {
     id: 'src2',
-    name: 'Azure AI',
-    description: 'Agents powered by Microsoft Azure AI services'
+    name: 'Hitachi R&D Labs',
+    description: 'Agents developed by Hitachi R&D Labs'
   },
   {
     id: 'src3',
-    name: 'Google AI',
-    description: 'Agents powered by Google AI services'
+    name: 'SaaS AI Provider',
+    description: 'Agents powered by SaaS AI providers'
   },
   {
     id: 'src4',
-    name: 'HitachiAI',
-    description: 'Proprietary Hitachi AI models'
+    name: 'Partner AI Provider',
+    description: 'Agents provided by Hitachi Partners'
   },
   {
     id: 'src5',
-    name: 'Anthropic',
-    description: 'Agents powered by Anthropic Claude models'
+    name: 'Hitachi One',
+    description: 'Agents available through Hitachi Organization'
   }
 ];
 
