@@ -300,15 +300,15 @@ export const getSourceById = (id: string): AgentSource | undefined => {
 };
 
 // Map agents to business functions
-export const mapAgentToFunction = (agent: Agent): string => {
+/*export const mapAgentToFunction = (agent: Agent): string => {
   if (agent.businessUnitId === 'bu5') {
     return 'func1'; // Agentic AI Demos -> Applied AI
   } else if (agent.businessUnitId === 'bu2') {
     return 'func2'; // Manufacturing -> Industrial AI
   } else {
-    return 'func3'; // Everything else -> Enterprise AI
+    return 'func1'; // Everything else -> Applied AI
   }
-};
+};*/
 
 // Get dashboard stats
 export const getDashboardStats = (): DashboardStats => {
