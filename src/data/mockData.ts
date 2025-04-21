@@ -4,7 +4,7 @@ import { Agent, BusinessUnit, AgentSource, DashboardStats, BusinessFunction } fr
 export const businessFunctions: BusinessFunction[] = [
   {
     id: 'func1',
-    name: 'Applied AI',
+    name: 'Engineering AI',
     description: 'AI solutions for business applications',
     color: '#4CAF50'
   },
@@ -307,11 +307,11 @@ export const mapAgentToFunction = (agent: Agent): string => {
   if (agent.businessFunctionId) {
     return agent.businessFunctionId;
   } else if (agent.businessUnitId === 'bu5') {
-    return 'func1'; // Agentic AI Demos -> Applied AI
+    return 'func1'; // Agentic AI Demos -> Engineering AI
   } else if (agent.businessUnitId === 'bu2') {
     return 'func2'; // Manufacturing -> Industrial AI
   } else {
-    return 'func1'; // Everything else -> Applied AI
+    return 'func1'; // Everything else -> Engineering AI
   }
 };
 
