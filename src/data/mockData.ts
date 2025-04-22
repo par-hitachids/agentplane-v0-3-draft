@@ -26,33 +26,33 @@ export const businessFunctions: BusinessFunction[] = [
 export const businessUnits: BusinessUnit[] = [
   {
     id: 'bu1',
+    name: 'Multi-Domain',
+    description: 'Demo agents that can be used across business domains',
+    color: '#B30100'
+  },
+  {
+    id: 'bu2',
     name: 'Banking & Financial Services',
     description: 'AI solutions for banking and financial services',
     color: '#3F51B5'
   },
   {
-    id: 'bu2',
+    id: 'bu3',
     name: 'Manufacturing',
     description: 'AI solutions for manufacturing industries',
     color: '#FF9800'
   },
   {
-    id: 'bu3',
+    id: 'bu4',
     name: 'Healthcare',
     description: 'AI solutions for healthcare providers',
     color: '#4CAF50'
   },
   {
-    id: 'bu4',
+    id: 'bu5',
     name: 'Insurance',
     description: 'AI solutions for insurance companies',
     color: '#9C27B0'
-  },
-  {
-    id: 'bu5',
-    name: 'Hitachi',
-    description: 'Demo agents for showcasing AI capabilities',
-    color: '#B30100'
   }
 ];
 
@@ -89,8 +89,8 @@ export const agentSources: AgentSource[] = [
 export const agents: Agent[] = [
   {
     id: 'agent1',
-    name: 'Regulatory Change Agent',
-    description: 'Continuously scans and maps regulatory changes to impacted policies/procedures',
+    name: 'GitHub Agent',
+    description: 'A conversational GitHub automation agent built with LangGraph, allowing users to manage repositories, issues, PRs, and workflows through natural language commands.',
     businessFunctionId: 'func1',
     businessUnitId: 'bu1',
     sourceId: 'src1',
@@ -99,52 +99,52 @@ export const agents: Agent[] = [
     lastActive: '2025-04-15',
     performance: {
       successRate: 92,
-      responseTime: 3.2,
-      completedTasks: 5240,
+      responseTime: 5,
+      completedTasks: 40,
     },
-    type: 'Conversational RAG',
+    type: 'Conversational AI',
     version: '1.0.0',
-    owner: 'Parag Y Shetye',
+    owner: 'Ashwin B.',
     cost: 0.05
   },
   {
     id: 'agent2',
-    name: 'Loan Approval Agent',
-    description: 'Evaluates applications, risk factors, and recommends approval/rejection',
+    name: 'ServiceNow Agent',
+    description: 'AI-driven IT support and ticket resolution',
     businessFunctionId: 'func1',
     businessUnitId: 'bu1',
     sourceId: 'src1',
-    status: 'maintenance',
+    status: 'active',
     createdAt: '2025-01-20',
     lastActive: '2025-04-15',
     performance: {
-      successRate: 88,
-      responseTime: 5.7,
-      completedTasks: 942,
+      successRate: 94,
+      responseTime: 6,
+      completedTasks: 35,
     },
     type: 'Analytical',
-    version: '1.0.1',
-    owner: 'Parag Y Shetye',
+    version: '1.0.0',
+    owner: 'Sai Subramanian',
     cost: 0.12
   },
   {
     id: 'agent3',
-    name: 'Health Analyst',
-    description: 'Analyzes patient data to suggest treatment plans',
-    businessFunctionId: 'func3',
-    businessUnitId: 'bu3',
-    sourceId: 'src3',
-    status: 'maintenance',
-    createdAt: '2024-07-20T11:15:00Z',
-    lastActive: '2024-10-05T09:20:00Z',
+    name: 'Product Documentation Agent',
+    description: 'AI agent for intelligent documentation assistance',
+    businessFunctionId: 'func1',
+    businessUnitId: 'bu1',
+    sourceId: 'src1',
+    status: 'active',
+    createdAt: '2025-04-20',
+    lastActive: '2025-04-22',
     performance: {
       successRate: 92,
-      responseTime: 1.8,
-      completedTasks: 2870
+      responseTime: 7,
+      completedTasks: 28
     },
-    type: 'Analyst',
-    version: '2.0.2',
-    owner: 'Healthcare Division',
+    type: 'Generative AI',
+    version: '1.0.0',
+    owner: 'Chandra G.',
     cost: 0.09
   },
   {
