@@ -8,7 +8,7 @@ export function Navbar() {
       <div className="font-semibold text-3xl flex items-center gap-2">
         <span style={{
           color: '#000000'
-        }}>HARC.Agents - Agentplane</span>
+        }}>HARC.Agents - AgentPlane</span>
         <span className="text-xs bg-blue-100 text-blue-800 py-0.5 px-2 rounded-full">Beta</span>
       </div>
       
