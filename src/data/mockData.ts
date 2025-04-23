@@ -107,11 +107,12 @@ export const agents: Agent[] = [
     version: '1.0.0',
     owner: 'Ashwin B.',
     cost: 0.05
+    demoURL: 'https://tso-ghagent-capp.thankfulflower-bbc92453.centralus.azurecontainerapps.io/',
   },
   {
     id: 'agent2',
     name: 'ServiceNow Agent',
-    description: 'AI-driven IT support and ticket resolution',
+    description: 'An intelligent agent designed to retrieve, correlate, and analyze historical incidents, alerts, problems, and service requests from ITSM systems like ServiceNow. It accelerates Root Cause Analysis (RCA), surfaces recurring patterns, and assists operators with actionable insights for faster incident resolution.',
     businessFunctionId: 'func1',
     businessUnitId: 'bu1',
     sourceId: 'src1',
@@ -123,10 +124,11 @@ export const agents: Agent[] = [
       responseTime: 6,
       completedTasks: 35,
     },
-    type: 'Analytical',
+    type: 'Agentic RAG',
     version: '1.0.0',
     owner: 'Sai Subramanian',
     cost: 0.12
+    demoURL: 'https://service-now-agent.politesky-9f28c895.eastus.azurecontainerapps.io/',
   },
   {
     id: 'agent3',
