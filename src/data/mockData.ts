@@ -231,7 +231,7 @@ export const agents: Agent[] = [
     version: '1.0.0',
     owner: 'Parag Y Shetye',
     cost: 0.05,
-    demoUrl: 'https://regintel-insight-hub.lovable.app/'
+    demoUrl: 'https://regintel-agent.lovable.app'
   }, 
 ];
 
