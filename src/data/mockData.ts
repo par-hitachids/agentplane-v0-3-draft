@@ -1,4 +1,5 @@
 import { Agent, BusinessUnit, AgentSource, DashboardStats, BusinessFunction } from '@/types';
+import RAI_Dashboard from '../lib/RAI_Dashboard.jpeg';
 
 // Business Functions
 export const businessFunctions: BusinessFunction[] = [
