@@ -149,8 +149,8 @@ export const agents: Agent[] = [
   },
   {
     id: 'agent4',
-    name: 'AI Compass Demo',
-    description: 'Demo agent showcasing conversational AI capabilities',
+    name: 'RAI Analytics',
+    description: 'Dashboard providing analytics based on user interactions with RAI',
     businessFunctionId: 'func1',
     businessUnitId: 'bu1',
     sourceId: 'src1',
@@ -160,12 +160,12 @@ export const agents: Agent[] = [
     performance: {
       successRate: 98,
       responseTime: 2,
-      completedTasks: 2340
+      completedTasks: 20
     },
     type: 'Responsible AI',
     version: '1.0.0',
-    owner: 'Chandra, Pradeep, Ashwin B.',
-    demoUrl: 'https://hv-rag.us-east-1.elasticbeanstalk.com'
+    owner: 'Subbu Venkatesan',
+    demoUrl: 'RAI_Dashboard'
   }, 
 ];
 
