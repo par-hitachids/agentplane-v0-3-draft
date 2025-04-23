@@ -106,7 +106,7 @@ export const agents: Agent[] = [
     type: 'Conversational AI',
     version: '1.0.0',
     owner: 'Ashwin B.',
-    cost: 0.05
+    cost: 0.05,
     demoUrl: 'https://tso-ghagent-capp.thankfulflower-bbc92453.centralus.azurecontainerapps.io'
   },
   {
@@ -127,7 +127,7 @@ export const agents: Agent[] = [
     type: 'Agentic RAG',
     version: '1.0.0',
     owner: 'Sai Subramanian',
-    cost: 0.12
+    cost: 0.12,
     demoUrl: 'https://service-now-agent.politesky-9f28c895.eastus.azurecontainerapps.io'
   },
   {
