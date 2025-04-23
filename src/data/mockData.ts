@@ -165,7 +165,7 @@ export const agents: Agent[] = [
     type: 'Responsible AI',
     version: '1.0.0',
     owner: 'Subbu Venkatesan',
-    demoUrl: 'RAI_Dashboard'
+    demoUrl: 'RAI_Dashboard.jpeg'
   }, 
 ];
 
