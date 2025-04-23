@@ -71,7 +71,7 @@ export const agentSources: AgentSource[] = [
   },
   {
     id: 'src3',
-    name: 'SaaS AI Provider',
+    name: 'LCNC AI Platform',
     description: 'Agents powered by SaaS AI providers'
   },
   {
@@ -218,7 +218,7 @@ export const agents: Agent[] = [
     description: 'AI-powered regulatory document analysis',
     businessFunctionId: 'func1',
     businessUnitId: 'bu2',
-    sourceId: 'src1',
+    sourceId: 'src3',
     status: 'active',
     createdAt: '2025-04-20',
     lastActive: '2025-04-23',
