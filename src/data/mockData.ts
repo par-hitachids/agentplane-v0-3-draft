@@ -107,7 +107,7 @@ export const agents: Agent[] = [
     version: '1.0.0',
     owner: 'Ashwin B.',
     cost: 0.05
-    demoURL: 'https://tso-ghagent-capp.thankfulflower-bbc92453.centralus.azurecontainerapps.io/',
+    demoUrl: 'https://tso-ghagent-capp.thankfulflower-bbc92453.centralus.azurecontainerapps.io/',
   },
   {
     id: 'agent2',
@@ -128,7 +128,7 @@ export const agents: Agent[] = [
     version: '1.0.0',
     owner: 'Sai Subramanian',
     cost: 0.12
-    demoURL: 'https://service-now-agent.politesky-9f28c895.eastus.azurecontainerapps.io/',
+    demoUrl: 'https://service-now-agent.politesky-9f28c895.eastus.azurecontainerapps.io/',
   },
   {
     id: 'agent3',
