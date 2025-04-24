@@ -275,6 +275,27 @@ export const agents: Agent[] = [
     cost: 0.05,
     demoUrl: 'https://dsm25ilj5bimz.cloudfront.net/dashboard'
   }, 
+  {
+    id: 'agent10',
+    name: 'Agent Assessment',
+    description: 'A diagnostic agent designed to evaluate AI agents across multiple dimensions of capability, including reasoning, autonomy, memory, and interaction. MaturityLens systematically scores agents to help benchmark progress and identify improvement areas in agentic system development.',
+    businessFunctionId: 'func1',
+    businessUnitId: 'bu1',
+    sourceId: 'src1',
+    status: 'active',
+    createdAt: '2025-04-20',
+    lastActive: '2025-04-24',
+    performance: {
+      successRate: 91,
+      responseTime: 0.8,
+      completedTasks: 157,
+    },
+    type: 'Agent Systems',
+    version: '1.0.0',
+    owner: 'Sai Subramanian',
+    cost: 0.05,
+    demoUrl: 'https://agentmaturity.blackriver-de37f9c4.eastus.azurecontainerapps.io'
+  }, 
 ];
 
 // Helper function to get business function by id
