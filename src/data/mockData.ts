@@ -128,7 +128,7 @@ export const agents: Agent[] = [
     version: '1.0.0',
     owner: 'Sai Subramanian',
     cost: 0.12,
-    demoUrl: 'https://service-now-agent.politesky-9f28c895.eastus.azurecontainerapps.io'
+    demoUrl: 'https://service-now-agent.bluestone-b837dc08.eastus.azurecontainerapps.io'
   },
   {
     id: 'agent3',
