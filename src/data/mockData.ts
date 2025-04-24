@@ -81,8 +81,8 @@ export const agentSources: AgentSource[] = [
   },
   {
     id: 'src5',
-    name: 'Hitachi One',
-    description: 'Agents available through Hitachi Organization'
+    name: 'HitachiDS IoT',
+    description: 'Agents available through HitachiDS IoT Practice'
   }
 ];
 
@@ -189,7 +189,7 @@ export const agents: Agent[] = [
     version: '1.0.0',
     owner: 'Hitachi R&D',
     cost: 0.05,
-    demoUrl: 'https://rd.hitachi.com/_tags/AI_%26_Data_science'
+    demoUrl: 'http://44.227.174.242:8000/ai_modal/dash'
   }, 
   {
     id: 'agent6',
@@ -216,8 +216,8 @@ export const agents: Agent[] = [
     id: 'agent7',
     name: 'Regulatory Intelligence Agent',
     description: 'AI-powered regulatory document analysis',
-    businessFunctionId: 'func1',
-    businessUnitId: 'bu2',
+    businessFunctionId: 'func2',
+    businessUnitId: 'bu3',
     sourceId: 'src3',
     status: 'active',
     createdAt: '2025-04-20',
@@ -232,6 +232,48 @@ export const agents: Agent[] = [
     owner: 'Parag Y Shetye',
     cost: 0.05,
     demoUrl: 'https://regintel-agent.lovable.app'
+  }, 
+  {
+    id: 'agent8',
+    name: 'Automated Quality Inspection Copilot',
+    description: 'An agentic copilot for automated quality inspections that empowers quality inspectors with real-time insights, generates dynamic visualizations (Gen BI), and streamlines inspection tasks.',
+    businessFunctionId: 'func2',
+    businessUnitId: 'bu3',
+    sourceId: 'src5',
+    status: 'active',
+    createdAt: '2024-10-13',
+    lastActive: '2025-04-24',
+    performance: {
+      successRate: 86,
+      responseTime: 4.5,
+      completedTasks: 89,
+    },
+    type: 'Industrial Copilot',
+    version: '1.0.0',
+    owner: 'IoT Practice',
+    cost: 0.05,
+    demoUrl: 'https://zealous-sand-07babe10f.5.azurestaticapps.net'
+  }, 
+  {
+    id: 'agent9',
+    name: 'GenSei-X Industrial​ Copilot',
+    description: 'GenSei-X is a GenAI-powered assistant for manufacturing teams, helping maintenance, production, and quality roles streamline operations.',
+    businessFunctionId: 'func2',
+    businessUnitId: 'bu3',
+    sourceId: 'src5',
+    status: 'active',
+    createdAt: '2024-10-10',
+    lastActive: '2025-04-20',
+    performance: {
+      successRate: 88,
+      responseTime: 1,
+      completedTasks: 50,
+    },
+    type: 'Regression',
+    version: '1.0.0',
+    owner: 'IoT Practice',
+    cost: 0.05,
+    demoUrl: 'https://dsm25ilj5bimz.cloudfront.net/dashboard'
   }, 
 ];
 
