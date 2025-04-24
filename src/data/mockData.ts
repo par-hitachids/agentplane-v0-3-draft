@@ -215,9 +215,9 @@ export const agents: Agent[] = [
   {
     id: 'agent7',
     name: 'Regulatory Intelligence Agent',
-    description: 'AI-powered regulatory document analysis',
-    businessFunctionId: 'func2',
-    businessUnitId: 'bu3',
+    description: 'Autonomous agent to parse regulatory bulletins, summarize key changes, and identify regulatory requirements, impacted areas.',
+    businessFunctionId: 'func1',
+    businessUnitId: 'bu2',
     sourceId: 'src3',
     status: 'active',
     createdAt: '2025-04-20',
