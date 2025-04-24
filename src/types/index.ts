@@ -19,6 +19,7 @@ export type Agent = {
   name: string;
   description: string;
   businessUnitId: string;
+  businessFunctionId: string;
   sourceId: string;
   status: 'active' | 'inactive' | 'maintenance';
   createdAt: string;

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Search } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 import { FunctionSection } from './FunctionSection';
 import { BusinessUnitSection } from './BusinessUnitSection';
 import { DashboardFilters } from './DashboardFilters';
@@ -40,36 +41,87 @@ export function AgentTabs({
   onFilterChange,
   onSearchChange
 }: AgentTabsProps) {
+  const [activeTab, setActiveTab] = useState('functions');
+
+  const handleFunctionFilter = (functionId: string) => {
+    const newSelectedFunctions = selectedFunctions.includes(functionId)
+      ? selectedFunctions.filter(id => id !== functionId)
+      : [...selectedFunctions, functionId];
+    onFilterChange('function', newSelectedFunctions);
+  };
+
+  const handleBusinessUnitFilter = (unitId: string) => {
+    const newSelectedUnits = selectedBusinessUnits.includes(unitId)
+      ? selectedBusinessUnits.filter(id => id !== unitId)
+      : [...selectedBusinessUnits, unitId];
+    onFilterChange('businessUnit', newSelectedUnits);
+  };
+
   return (
-    <Tabs defaultValue="functions" className="mt-4">
+    <Tabs defaultValue="functions" className="mt-4" onValueChange={setActiveTab}>
       <div className="flex flex-col space-y-4">
         <TabsList className="w-full justify-start">
           <TabsTrigger value="functions">Agents by Functions</TabsTrigger>
           <TabsTrigger value="businessUnits">Agents by Business Units</TabsTrigger>
         </TabsList>
         
-        <div className="flex justify-end items-center gap-4">
-          <div className="relative w-80">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Search agents..."
-              className="w-full bg-background pl-8"
-              value={searchQuery}
-              onChange={(e) => onSearchChange(e.target.value)}
-            />
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
+          <div className="flex flex-wrap gap-2">
+            {activeTab === 'functions' && businessFunctions.map(func => (
+              <Button
+                key={func.id}
+                variant={selectedFunctions.includes(func.id) ? "default" : "outline"}
+                onClick={() => handleFunctionFilter(func.id)}
+                className="whitespace-nowrap"
+                style={{
+                  backgroundColor: selectedFunctions.includes(func.id) ? func.color : 'transparent',
+                  color: selectedFunctions.includes(func.id) ? 'white' : 'inherit',
+                  borderColor: func.color
+                }}
+              >
+                {func.name}
+              </Button>
+            ))}
+            {activeTab === 'businessUnits' && businessUnits.map(unit => (
+              <Button
+                key={unit.id}
+                variant={selectedBusinessUnits.includes(unit.id) ? "default" : "outline"}
+                onClick={() => handleBusinessUnitFilter(unit.id)}
+                className="whitespace-nowrap"
+                style={{
+                  backgroundColor: selectedBusinessUnits.includes(unit.id) ? unit.color : 'transparent',
+                  color: selectedBusinessUnits.includes(unit.id) ? 'white' : 'inherit',
+                  borderColor: unit.color
+                }}
+              >
+                {unit.name}
+              </Button>
+            ))}
           </div>
           
-          <DashboardFilters 
-            businessUnits={businessUnits}
-            businessFunctions={businessFunctions}
-            sources={sources}
-            selectedBusinessUnits={selectedBusinessUnits}
-            selectedSources={selectedSources}
-            selectedStatuses={selectedStatuses}
-            selectedFunctions={selectedFunctions}
-            onFilterChange={onFilterChange}
-          />
+          <div className="flex flex-1 justify-end items-center gap-4">
+            <div className="relative w-80">
+              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="search"
+                placeholder="Search agents..."
+                className="w-full bg-background pl-8"
+                value={searchQuery}
+                onChange={(e) => onSearchChange(e.target.value)}
+              />
+            </div>
+            
+            <DashboardFilters 
+              businessUnits={businessUnits}
+              businessFunctions={businessFunctions}
+              sources={sources}
+              selectedBusinessUnits={selectedBusinessUnits}
+              selectedSources={selectedSources}
+              selectedStatuses={selectedStatuses}
+              selectedFunctions={selectedFunctions}
+              onFilterChange={onFilterChange}
+            />
+          </div>
         </div>
       </div>
       
