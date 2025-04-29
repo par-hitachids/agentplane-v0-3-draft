@@ -147,8 +147,9 @@ export const agents: Agent[] = [
     },
     type: 'Generative AI',
     version: '1.0.0',
-    owner: 'Chandra G.',
-    cost: 0.09
+    owner: 'Chandra Ganapathy',
+    cost: 0.09,
+    demoUrl: 'https://productdocumentcontainerapp01.politesky-4044d8bd.eastus.azurecontainerapps.io'
   },
   {
     id: 'agent4',
@@ -256,7 +257,7 @@ export const agents: Agent[] = [
   }, 
   {
     id: 'agent9',
-    name: 'GenSei-X Industrial​ Copilot',
+    name: 'GenSei-X Industrial Copilot',
     description: 'GenSei-X is a GenAI-powered assistant for manufacturing teams, helping maintenance, production, and quality roles streamline operations.',
     businessFunctionId: 'func2',
     businessUnitId: 'bu3',
@@ -300,7 +301,7 @@ export const agents: Agent[] = [
     id: 'agent11',
     name: 'AI Sales Assistant',
     description: 'An intelligent AI Sales Assistant that engages customers, understands their needs, and guides them to the right product through natural, personalized conversations.',
-    businessFunctionId: 'func1',
+    businessFunctionId: 'func3',
     businessUnitId: 'bu3',
     sourceId: 'src1',
     status: 'active',
@@ -311,7 +312,7 @@ export const agents: Agent[] = [
       responseTime: 0.8,
       completedTasks: 15,
     },
-    type: 'Voice Conversational',
+    type: 'Conversational Voice',
     version: '1.0.0',
     owner: 'Prafulla Vispute',
     cost: 0.05,
@@ -340,7 +341,7 @@ export const agents: Agent[] = [
   }, 
   {
     id: 'agent13',
-    name: 'CSV Analyser, Plotting and Query Agent',
+    name: 'CSV Analyzer, Plotting and Query Agent',
     description: 'Agent which can do statistical analysis, execute queries, Plot charts and provide analysis and insights on complex trends.',
     businessFunctionId: 'func1',
     businessUnitId: 'bu1',
