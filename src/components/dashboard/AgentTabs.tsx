@@ -81,8 +81,9 @@ export function AgentTabs({
           <TabsTrigger value="businessUnits">Agents by Business Units</TabsTrigger>
         </TabsList>
         
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
+        <div className="flex flex-col space-y-4 w-full">
+          {/* First row: Function/Business Unit buttons spanning the entire width */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2 w-full">
             {activeTab === 'functions' && businessFunctions.map(func => (
               <Button
                 key={func.id}
@@ -116,8 +117,9 @@ export function AgentTabs({
             ))}
           </div>
           
-          <div className="flex flex-1 justify-end items-center gap-4">
-            <div className="relative w-80">
+          {/* Second row: Search and filters aligned */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full">
+            <div className="relative flex-grow max-w-md">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
