@@ -82,7 +82,7 @@ export function AgentTabs({
         </TabsList>
         
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
             {activeTab === 'functions' && businessFunctions.map(func => (
               <Button
                 key={func.id}
