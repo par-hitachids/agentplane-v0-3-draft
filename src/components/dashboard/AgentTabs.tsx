@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Search } from 'lucide-react';
+import { Search, Cog, Activity, Shield, Cloud } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -57,6 +57,22 @@ export function AgentTabs({
     onFilterChange('businessUnit', newSelectedUnits);
   };
 
+  // Function to render the appropriate icon based on function name
+  const getFunctionIcon = (name: string) => {
+    switch (name) {
+      case 'Operations AI':
+        return <Cog className="mr-1 h-4 w-4" />;
+      case 'Analytical AI':
+        return <Activity className="mr-1 h-4 w-4" />;
+      case 'Security AI':
+        return <Shield className="mr-1 h-4 w-4" />;
+      case 'Cloud AI':
+        return <Cloud className="mr-1 h-4 w-4" />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <Tabs defaultValue="functions" className="mt-4" onValueChange={setActiveTab}>
       <div className="flex flex-col space-y-4">
@@ -72,13 +88,14 @@ export function AgentTabs({
                 key={func.id}
                 variant={selectedFunctions.includes(func.id) ? "default" : "outline"}
                 onClick={() => handleFunctionFilter(func.id)}
-                className="whitespace-nowrap"
+                className="whitespace-nowrap flex items-center"
                 style={{
                   backgroundColor: selectedFunctions.includes(func.id) ? func.color : 'transparent',
                   color: selectedFunctions.includes(func.id) ? 'white' : 'inherit',
                   borderColor: func.color
                 }}
               >
+                {getFunctionIcon(func.name)}
                 {func.name}
               </Button>
             ))}

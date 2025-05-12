@@ -20,6 +20,30 @@ export const businessFunctions: BusinessFunction[] = [
     name: 'Enterprise AI',
     description: 'AI solutions for enterprise-wide applications',
     color: '#2196F3'
+  },
+  {
+    id: 'func4',
+    name: 'Operations AI',
+    description: 'AI solutions for operational efficiency and automation',
+    color: '#E91E63'
+  },
+  {
+    id: 'func5',
+    name: 'Analytical AI',
+    description: 'AI solutions for data analysis and insights',
+    color: '#9C27B0'
+  },
+  {
+    id: 'func6',
+    name: 'Security AI',
+    description: 'AI solutions for security and compliance',
+    color: '#607D8B'
+  },
+  {
+    id: 'func7',
+    name: 'Cloud AI',
+    description: 'AI solutions for cloud infrastructure and services',
+    color: '#00BCD4'
   }
 ];
 
