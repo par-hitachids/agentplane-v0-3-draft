@@ -89,7 +89,7 @@ export function AgentTabs({
                 key={func.id}
                 variant={selectedFunctions.includes(func.id) ? "default" : "outline"}
                 onClick={() => handleFunctionFilter(func.id)}
-                className="whitespace-nowrap flex items-center"
+                className="flex items-center h-auto py-2 min-h-10"
                 style={{
                   backgroundColor: selectedFunctions.includes(func.id) ? func.color : 'transparent',
                   color: selectedFunctions.includes(func.id) ? 'white' : 'inherit',
@@ -105,7 +105,7 @@ export function AgentTabs({
                 key={unit.id}
                 variant={selectedBusinessUnits.includes(unit.id) ? "default" : "outline"}
                 onClick={() => handleBusinessUnitFilter(unit.id)}
-                className="whitespace-nowrap"
+                className="h-auto py-2 min-h-10"
                 style={{
                   backgroundColor: selectedBusinessUnits.includes(unit.id) ? unit.color : 'transparent',
                   color: selectedBusinessUnits.includes(unit.id) ? 'white' : 'inherit',
