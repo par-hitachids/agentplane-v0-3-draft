@@ -5,7 +5,7 @@ import { DashboardStats } from '@/components/dashboard/DashboardStats';
 import { getDashboardStats } from '@/data/mockData';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, FileText, Layers, Send } from 'lucide-react';
+import { ArrowRight, FileText, Layers, Send, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
@@ -36,26 +36,46 @@ const LandingPage = () => {
       <Navbar />
       
       <div className="flex-1 space-y-8 p-4 md:p-8 pt-6">
-        <h1 className="text-3xl font-bold mb-2">Welcome to HARC.Agents - AgentPlane</h1>
-        <p className="text-lg text-muted-foreground mb-6">
-          Your centralized platform for AI agent management, deployment, and monitoring
-        </p>
+        {/* Hero Section */}
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 md:p-12 mb-10">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold text-blue-600 mb-2">Welcome to</p>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-700">
+              Your AI Agent Management Platform
+            </h2>
+            <p className="text-lg md:text-xl text-gray-700 mb-6">
+              Centralized platform for AI agent management, deployment, and monitoring across your organization
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
+                <Link to="/agent-library" className="flex items-center">
+                  Explore Agents <ChevronRight className="h-4 w-4 ml-1" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline">
+                <Link to="/agent-onboarding" className="flex items-center">
+                  Submit New Agent <ChevronRight className="h-4 w-4 ml-1" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
 
         {/* Stats Overview */}
         <DashboardStats stats={dashboardStats} />
         
         {/* Main Navigation Cards */}
         <div className="grid gap-6 md:grid-cols-3">
-          <Card className="hover:shadow-md transition-shadow">
-            <CardHeader>
+          <Card className="hover:shadow-md transition-shadow border-t-4 border-t-blue-500 overflow-hidden">
+            <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100">
               <CardTitle className="flex justify-between items-center">
                 AI Agents Library
-                <FileText className="h-5 w-5 text-primary" />
+                <FileText className="h-5 w-5 text-blue-600" />
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="mb-4">Browse and discover AI agents organized by business functions and organizational units.</p>
-              <Button asChild className="w-full">
+            <CardContent className="pt-6">
+              <p className="mb-6 text-gray-600">Browse and discover AI agents organized by business functions and organizational units.</p>
+              <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
                 <Link to="/agent-library" className="flex justify-between items-center">
                   Explore Agents <ArrowRight className="h-4 w-4 ml-2" />
                 </Link>
@@ -63,16 +83,16 @@ const LandingPage = () => {
             </CardContent>
           </Card>
 
-          <Card className="hover:shadow-md transition-shadow">
-            <CardHeader>
+          <Card className="hover:shadow-md transition-shadow border-t-4 border-t-indigo-500 overflow-hidden">
+            <CardHeader className="bg-gradient-to-r from-indigo-50 to-indigo-100">
               <CardTitle className="flex justify-between items-center">
                 Deployment Hub
-                <Layers className="h-5 w-5 text-primary" />
+                <Layers className="h-5 w-5 text-indigo-600" />
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="mb-4">Deploy, monitor, and manage AI agents across your organization's infrastructure.</p>
-              <Button asChild className="w-full">
+            <CardContent className="pt-6">
+              <p className="mb-6 text-gray-600">Deploy, monitor, and manage AI agents across your organization's infrastructure.</p>
+              <Button asChild className="w-full bg-indigo-600 hover:bg-indigo-700">
                 <Link to="/deployment-hub" className="flex justify-between items-center">
                   Manage Deployments <ArrowRight className="h-4 w-4 ml-2" />
                 </Link>
@@ -80,16 +100,16 @@ const LandingPage = () => {
             </CardContent>
           </Card>
 
-          <Card className="hover:shadow-md transition-shadow">
-            <CardHeader>
+          <Card className="hover:shadow-md transition-shadow border-t-4 border-t-purple-500 overflow-hidden">
+            <CardHeader className="bg-gradient-to-r from-purple-50 to-purple-100">
               <CardTitle className="flex justify-between items-center">
                 New Agent Onboarding
-                <Send className="h-5 w-5 text-primary" />
+                <Send className="h-5 w-5 text-purple-600" />
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="mb-4">Submit new AI agents for review and deployment through our standardized process.</p>
-              <Button asChild className="w-full">
+            <CardContent className="pt-6">
+              <p className="mb-6 text-gray-600">Submit new AI agents for review and deployment through our standardized process.</p>
+              <Button asChild className="w-full bg-purple-600 hover:bg-purple-700">
                 <Link to="/agent-onboarding" className="flex justify-between items-center">
                   Submit New Agent <ArrowRight className="h-4 w-4 ml-2" />
                 </Link>
@@ -100,24 +120,25 @@ const LandingPage = () => {
         
         {/* Latest News Section */}
         <section className="mt-10">
-          <h2 className="text-2xl font-bold mb-4">Latest News & Updates</h2>
-          <div className="grid gap-4">
+          <h2 className="text-2xl font-bold mb-6 pb-2 border-b">Latest News & Updates</h2>
+          <div className="grid gap-6 md:grid-cols-3">
             {newsItems.map(item => (
-              <Card key={item.id} className="overflow-hidden">
+              <Card key={item.id} className="overflow-hidden hover:shadow-md transition-shadow">
+                <CardHeader className="p-4 bg-gradient-to-r from-gray-50 to-gray-100">
+                  <CardTitle className="text-lg">{item.title}</CardTitle>
+                  <p className="text-sm text-muted-foreground">{item.date}</p>
+                </CardHeader>
                 <CardContent className="p-4">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h3 className="font-medium text-lg">{item.title}</h3>
-                      <p className="text-muted-foreground mt-1">{item.content}</p>
-                    </div>
-                    <span className="text-sm text-muted-foreground whitespace-nowrap">{item.date}</span>
-                  </div>
+                  <p className="text-gray-600">{item.content}</p>
+                  <Button variant="link" className="p-0 h-auto mt-2 text-blue-600">
+                    Read more <ChevronRight className="h-3 w-3 ml-1 inline" />
+                  </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
-          <div className="mt-4 text-center">
-            <Button variant="outline">View All Updates</Button>
+          <div className="mt-6 text-center">
+            <Button variant="outline" size="lg">View All Updates</Button>
           </div>
         </section>
       </div>
