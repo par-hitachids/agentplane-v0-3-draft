@@ -131,7 +131,7 @@ export const agents: Agent[] = [
     id: 'agent2',
     name: 'ServiceNow Agent',
     description: 'An intelligent agent designed to retrieve, correlate, and analyze historical incidents, alerts, problems, and service requests from ITSM systems like ServiceNow. It accelerates Root Cause Analysis (RCA), surfaces recurring patterns, and assists operators with actionable insights for faster incident resolution.',
-    businessFunctionId: 'func1',
+    businessFunctionId: 'func4', // Changed from func1 to func4 (Operations AI)
     businessUnitId: 'bu1',
     sourceId: 'src1',
     status: 'active',
