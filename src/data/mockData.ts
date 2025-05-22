@@ -16,12 +16,6 @@ export const businessFunctions: BusinessFunction[] = [
     color: '#FF9800'
   },
   {
-    id: 'func3',
-    name: 'Enterprise AI',
-    description: 'AI solutions for enterprise-wide applications',
-    color: '#2196F3'
-  },
-  {
     id: 'func4',
     name: 'Operations AI',
     description: 'AI solutions for operational efficiency and automation',
@@ -325,7 +319,7 @@ export const agents: Agent[] = [
     id: 'agent11',
     name: 'AI Sales Assistant',
     description: 'An intelligent AI Sales Assistant that engages customers, understands their needs, and guides them to the right product through natural, personalized conversations.',
-    businessFunctionId: 'func3',
+    businessFunctionId: 'func1', // Changed from func3 to func1
     businessUnitId: 'bu3',
     sourceId: 'src1',
     status: 'active',
