@@ -112,7 +112,7 @@ const AgentLibrary = () => {
                 <ChevronLeft className="h-4 w-4 mr-1" /> Back to Dashboard
               </Link>
             </Button>
-            <h1 className="text-3xl font-bold">AI Agents Library</h1>
+            <h1 className="text-3xl font-bold">HARC.Agents</h1>
             <p className="text-muted-foreground">Discover and explore AI agents across the organization</p>
           </div>
         </div>

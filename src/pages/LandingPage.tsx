@@ -69,7 +69,7 @@ const LandingPage = () => {
           <Card className="hover:shadow-md transition-shadow border-t-4 border-t-[#e60027] overflow-hidden">
             <CardHeader className="bg-gradient-to-r from-slate-50 to-slate-100">
               <CardTitle className="flex justify-between items-center text-slate-800">
-                AI Agents Library
+                HARC.Agents
                 <FileText className="h-5 w-5 text-[#e60027]" />
               </CardTitle>
             </CardHeader>
