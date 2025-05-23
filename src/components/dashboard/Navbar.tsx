@@ -10,7 +10,7 @@ export function Navbar() {
     <div className="flex h-16 items-center px-4 md:px-6 justify-between">
       <div className="flex items-center gap-6">
         <Link to="/" className="font-semibold text-3xl flex items-center gap-2 text-[#e60027]">
-          <span className="text-gray-950">AgentPlane</span>
+          <span className="text-gray-950 text-3xl">AgentPlane</span>
           <span className="text-xs bg-red-100 text-[#e60027] py-0.5 px-2 rounded-full">Beta</span>
         </Link>
         

@@ -6,32 +6,25 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, FileText, Layers, Send, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const LandingPage = () => {
   const dashboardStats = getDashboardStats();
-  const [newsItems] = useState([
-    {
-      id: 1,
-      title: 'Launch of Center for Architecture & AI (CAAI)',
-      content: 'CAAI is a new, cross-practice and cross-geo working group with the mission to embed AI deeply and systematically into modern architectures, setting a new standard for how intelligent business applications are designed, built, and delivered.',
-      date: '2025-05-25',
-    },
-    {
-      id: 2,
-      title: 'ServiceNow Agent v1.0 Now Available',
-      content: 'An intelligent agent designed to retrieve, correlate, and analyze historical incidents, alerts, problems, and service requests from ITSM systems like ServiceNow.',
-      date: '2025-05-15',
-    },
-    {
-      id: 3,
-      title: 'Launching New Deployment Hub for HARC.Agents',
-      content: 'Deployment Hub is a centralized platform to manage, monitor, and streamline HARC.agent deployments across environments.',
-      date: '2025-05-25',
-    },
-  ]);
-
-  return (
-    <div className="flex min-h-screen flex-col">
+  const [newsItems] = useState([{
+    id: 1,
+    title: 'Launch of Center for Architecture & AI (CAAI)',
+    content: 'CAAI is a new, cross-practice and cross-geo working group with the mission to embed AI deeply and systematically into modern architectures, setting a new standard for how intelligent business applications are designed, built, and delivered.',
+    date: '2025-05-25'
+  }, {
+    id: 2,
+    title: 'ServiceNow Agent v1.0 Now Available',
+    content: 'An intelligent agent designed to retrieve, correlate, and analyze historical incidents, alerts, problems, and service requests from ITSM systems like ServiceNow.',
+    date: '2025-05-15'
+  }, {
+    id: 3,
+    title: 'Launching New Deployment Hub for HARC.Agents',
+    content: 'Deployment Hub is a centralized platform to manage, monitor, and streamline HARC.agent deployments across environments.',
+    date: '2025-05-25'
+  }]);
+  return <div className="flex min-h-screen flex-col">
       <Navbar />
       
       <div className="flex-1 space-y-8 p-4 md:p-8 pt-6">
@@ -39,7 +32,7 @@ const LandingPage = () => {
         <div className="bg-gradient-to-r from-slate-50 to-slate-100 rounded-xl p-8 md:p-12 mb-10 border border-slate-200 shadow-sm">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold text-[#e60027] mb-2">Welcome to</p>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-slate-800">
+            <h2 className="text-4xl font-bold mb-4 text-slate-800 sm:text-3xl">
               Your AI Agent Management Platform
             </h2>
             <p className="text-lg md:text-xl text-slate-600 mb-6">
@@ -121,8 +114,7 @@ const LandingPage = () => {
         <section className="mt-10">
           <h2 className="text-2xl font-bold mb-6 pb-2 border-b text-slate-800">Latest News & Updates</h2>
           <div className="grid gap-6 md:grid-cols-3">
-            {newsItems.map(item => (
-              <Card key={item.id} className="overflow-hidden hover:shadow-md transition-shadow border border-slate-200">
+            {newsItems.map(item => <Card key={item.id} className="overflow-hidden hover:shadow-md transition-shadow border border-slate-200">
                 <CardHeader className="p-4 bg-gradient-to-r from-slate-50 to-slate-100">
                   <CardTitle className="text-lg text-slate-800">{item.title}</CardTitle>
                   <p className="text-sm text-slate-500">{item.date}</p>
@@ -133,8 +125,7 @@ const LandingPage = () => {
                     Read more <ChevronRight className="h-3 w-3 ml-1 inline" />
                   </Button>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
           <div className="mt-6 text-center">
             <Button variant="outline" size="lg" className="border-[#e60027] text-[#e60027] hover:bg-red-50">
@@ -143,8 +134,6 @@ const LandingPage = () => {
           </div>
         </section>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default LandingPage;
