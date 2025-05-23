@@ -1,4 +1,3 @@
-
 import { BellIcon, Settings, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
@@ -6,13 +5,12 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Link } from 'react-router-dom';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu';
 import { cn } from '@/lib/utils';
-
 export function Navbar() {
   return <div className="border-b sticky top-0 bg-background z-10">
     <div className="flex h-16 items-center px-4 md:px-6 justify-between">
       <div className="flex items-center gap-6">
         <Link to="/" className="font-semibold text-3xl flex items-center gap-2 text-[#e60027]">
-          <span>AgentPlane</span>
+          <span className="text-gray-950">AgentPlane</span>
           <span className="text-xs bg-red-100 text-[#e60027] py-0.5 px-2 rounded-full">Beta</span>
         </Link>
         
@@ -45,10 +43,7 @@ export function Navbar() {
                 <ul className="grid gap-3 p-4 w-[220px]">
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
-                      <a
-                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-red-50 to-red-100 p-4 no-underline outline-none focus:shadow-md"
-                        href="#"
-                      >
+                      <a className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-red-50 to-red-100 p-4 no-underline outline-none focus:shadow-md" href="#">
                         <div className="mt-4 mb-2 text-lg font-medium text-[#e60027]">
                           Documentation
                         </div>
@@ -60,10 +55,7 @@ export function Navbar() {
                   </li>
                   <li>
                     <NavigationMenuLink asChild>
-                      <a
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-red-50 hover:text-[#e60027] focus:bg-accent focus:text-accent-foreground"
-                        href="#"
-                      >
+                      <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-red-50 hover:text-[#e60027] focus:bg-accent focus:text-accent-foreground" href="#">
                         <div className="text-sm font-medium leading-none">FAQs</div>
                         <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                           Frequently asked questions about the platform.
@@ -73,10 +65,7 @@ export function Navbar() {
                   </li>
                   <li>
                     <NavigationMenuLink asChild>
-                      <a
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-red-50 hover:text-[#e60027] focus:bg-accent focus:text-accent-foreground"
-                        href="#"
-                      >
+                      <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-red-50 hover:text-[#e60027] focus:bg-accent focus:text-accent-foreground" href="#">
                         <div className="text-sm font-medium leading-none">Support</div>
                         <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                           Get help from our support team.
