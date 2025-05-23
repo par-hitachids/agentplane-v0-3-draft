@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Navbar } from '@/components/dashboard/Navbar';
 import { DashboardStats } from '@/components/dashboard/DashboardStats';
@@ -13,21 +12,21 @@ const LandingPage = () => {
   const [newsItems] = useState([
     {
       id: 1,
-      title: 'New Security AI Agent Released',
-      content: 'Our new Security AI agent helps detect and prevent cyber threats in real-time.',
-      date: '2025-05-20',
+      title: 'Launch of Center for Architecture & AI (CAAI)',
+      content: 'CAAI is a new, cross-practice and cross-geo working group with the mission to embed AI deeply and systematically into modern architectures, setting a new standard for how intelligent business applications are designed, built, and delivered.',
+      date: '2025-05-25',
     },
     {
       id: 2,
-      title: 'Operations AI v2.5 Now Available',
-      content: 'Latest update includes improved response times and enhanced decision-making capabilities.',
+      title: 'ServiceNow Agent v1.0 Now Available',
+      content: 'An intelligent agent designed to retrieve, correlate, and analyze historical incidents, alerts, problems, and service requests from ITSM systems like ServiceNow.',
       date: '2025-05-15',
     },
     {
       id: 3,
-      title: 'Analytics AI Integration with Power BI',
-      content: 'Connect our Analytics AI directly to Power BI dashboards for enhanced data visualization.',
-      date: '2025-05-10',
+      title: 'Launching New Deployment Hub for HARC.Agents',
+      content: 'Deployment Hub is a centralized platform to manage, monitor, and streamline HARC.agent deployments across environments.',
+      date: '2025-05-25',
     },
   ]);
 
