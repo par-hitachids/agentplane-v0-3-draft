@@ -419,7 +419,27 @@ export const agents: Agent[] = [
     owner: 'Neel Bhattacharjee',
     cost: 0.05,
     demoUrl: 'https://www.hitachids.com/service/ai-genai-services/'
-  }, 
+  },
+  {
+    id: 'agent16',
+    name: 'Oddziala Banking Assistant',
+    description: 'Oddziała Banking Assistant is an AI-powered virtual assistant designed to help users with everyday banking tasks through natural, conversational interactions. It provides services like checking account balances, exploring investment options, scheduling branch appointments, and connecting with live agents—delivering a seamless and personalized banking experience across voice and text channels.',
+    businessFunctionId: 'func1',
+    businessUnitId: 'bu2',
+    sourceId: 'src1',
+    status: 'active',
+    createdAt: '2025-06-10',
+    lastActive: '2025-06-10',
+    performance: {
+      successRate: 95,
+      responseTime: 2,
+      completedTasks: 25,
+    },
+    type: 'Conversational AI',
+    version: '1.0.0',
+    owner: 'Prafulla Vispute',
+    cost: 0.08
+  }
 ];
 
 // Helper function to get business function by id
