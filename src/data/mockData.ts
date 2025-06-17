@@ -438,7 +438,50 @@ export const agents: Agent[] = [
     type: 'Conversational AI',
     version: '1.0.0',
     owner: 'Prafulla Vispute',
-    cost: 0.08
+    cost: 0.08,
+    demoUrl: 'https://hitachivantara.sharepoint.com/sites/CAAI/_layouts/15/stream.aspx?id=%2fsites%2fCAAI%2fShared+Documents%2fCAAI-AgentPlane%2foddziala_ai_bank_agent%2fOddziała+-+BankAssistant.mp4&referrer=StreamWebApp.Web&referrer=Outlook.Desktop&referrerScenario=AddressBarCopied.view.ca792a04-cc08-471f-85c5-dc5a05313286&referrerScenario=email-linkwithoutembed&xsdata=MDV8MDJ8cGFyYWcuc2hldHllQGhpdGFjaGlkcy5jb218MjczYjNhZGRiYzc0NDBjNWE4ZmEwOGRkYWQ3YTBhNTF8MTg3OTFlMTc2MTU5NGY1MmE4ZDRkZTgxNGNhODI4NGF8MHwwfDYzODg1NzQ2MTk0ODg0OTc3MHxVbmtub3dufFRXRnBiR1pzYjNkOGV5SkZiWEIwZVUxaGNHa2lPblJ5ZFdVc0lsWWlPaUl3TGpBdU1EQXdNQ0lzSWxBaU9pSlhhVzR6TWlJc0lrRk9Jam9pVFdGcGJDSXNJbGRVSWpveWZRPT18MHx8fA%3d%3d&sdata=djFXNzdTNGxMUnlWaTdBa2RxVytYZDF4V0VFNDNlUDBDRTJtbGVGNnRRaz0%3d'
+  }
+  {
+    id: 'agent17',
+    name: 'GenBI DataBricks Genie',
+    description: 'GenBI Databricks Genie is an AI-powered analytics assistant built on Databricks that enables users to ask natural language questions and instantly get insights in the form of charts, summaries, and reports. It simplifies complex data exploration, helping business users and analysts make data-driven decisions without writing code.',
+    businessFunctionId: 'func1',
+    businessUnitId: 'bu1',
+    sourceId: 'src1',
+    status: 'active',
+    createdAt: '2025-06-10',
+    lastActive: '2025-06-10',
+    performance: {
+      successRate: 90,
+      responseTime: 4,
+      completedTasks: 15,
+    },
+    type: 'Analytics',
+    version: '1.0.0',
+    owner: 'Prafulla Vispute',
+    cost: 0.08,
+    demoUrl: 'https://hitachivantara.sharepoint.com/sites/CAAI/_layouts/15/stream.aspx?id=%2fsites%2fCAAI%2fShared+Documents%2fCAAI-AgentPlane%2fGenBI+Databricks+%26+Genie%2fGenBIDemoV1.mp4&referrer=StreamWebApp.Web&referrer=Outlook.Desktop&referrerScenario=AddressBarCopied.view.c150b739-c9f6-4cf8-ba37-1f930f4b6c47&referrerScenario=email-linkwithoutembed&xsdata=MDV8MDJ8cGFyYWcuc2hldHllQGhpdGFjaGlkcy5jb218MjczYjNhZGRiYzc0NDBjNWE4ZmEwOGRkYWQ3YTBhNTF8MTg3OTFlMTc2MTU5NGY1MmE4ZDRkZTgxNGNhODI4NGF8MHwwfDYzODg1NzQ2MTk0ODg2OTM2OXxVbmtub3dufFRXRnBiR1pzYjNkOGV5SkZiWEIwZVUxaGNHa2lPblJ5ZFdVc0lsWWlPaUl3TGpBdU1EQXdNQ0lzSWxBaU9pSlhhVzR6TWlJc0lrRk9Jam9pVFdGcGJDSXNJbGRVSWpveWZRPT18MHx8fA%3d%3d&sdata=aU5paXMyL0lac3NPeCsxbHhxMU0yOVR4V1JCcmZETHhWK25CQTZibllBOD0%3d'
+  }
+  {
+    id: 'agent18',
+    name: 'Contract Assistant',
+    description: 'Contract Assistant is an AI-driven solution that enables users to search, summarize, and understand contract documents stored in SharePoint using natural language. Integrated with Microsoft Copilot, it extracts key terms, dates, vendor details, and region-specific clauses, providing quick answers and insights while respecting role-based access controls and metadata. Ideal for legal, procurement, and compliance teams.',
+    businessFunctionId: 'func1',
+    businessUnitId: 'bu1',
+    sourceId: 'src1',
+    status: 'active',
+    createdAt: '2025-06-10',
+    lastActive: '2025-06-10',
+    performance: {
+      successRate: 90,
+      responseTime: 6,
+      completedTasks: 35,
+    },
+    type: 'SharePoint & Microsoft Copilot',
+    version: '1.0.0',
+    owner: 'Prafulla Vispute',
+    cost: 0.08,
+    demoUrl: 'https://hitachivantara.sharepoint.com/sites/CAAI/_layouts/15/stream.aspx?id=%2fsites%2fCAAI%2fShared+Documents%2fCAAI-AgentPlane%2fCopilot+Agent%2fDemo%2fContract+Assistant+(Sharepoint+%2b+MS+Copilot).mp4&referrer=StreamWebApp.Web&referrer=Outlook.Desktop&referrerScenario=AddressBarCopied.view.982146ce-b8eb-4faf-8296-f333c2d122b0&referrerScenario=email-linkwithoutembed&xsdata=MDV8MDJ8cGFyYWcuc2hldHllQGhpdGFjaGlkcy5jb218MjczYjNhZGRiYzc0NDBjNWE4ZmEwOGRkYWQ3YTBhNTF8MTg3OTFlMTc2MTU5NGY1MmE4ZDRkZTgxNGNhODI4NGF8MHwwfDYzODg1NzQ2MTk0ODg4MDk1NnxVbmtub3dufFRXRnBiR1pzYjNkOGV5SkZiWEIwZVUxaGNHa2lPblJ5ZFdVc0lsWWlPaUl3TGpBdU1EQXdNQ0lzSWxBaU9pSlhhVzR6TWlJc0lrRk9Jam9pVFdGcGJDSXNJbGRVSWpveWZRPT18MHx8fA%3d%3d&sdata=NkQvdXIyZEw5dElSUlhTS2lRbk41UFlBaEJJRG9JUkxiV1BkejV1eFBmaz0%3d'
   }
 ];
 
