@@ -482,6 +482,27 @@ export const agents: Agent[] = [
     owner: 'Prafulla Vispute',
     cost: 0.08,
     demoUrl: 'https://hitachivantara.sharepoint.com/sites/CAAI/_layouts/15/stream.aspx?id=%2fsites%2fCAAI%2fShared+Documents%2fCAAI-AgentPlane%2fCopilot+Agent%2fDemo%2fContract+Assistant+(Sharepoint+%2b+MS+Copilot).mp4&referrer=StreamWebApp.Web&referrer=Outlook.Desktop&referrerScenario=AddressBarCopied.view.982146ce-b8eb-4faf-8296-f333c2d122b0&referrerScenario=email-linkwithoutembed&xsdata=MDV8MDJ8cGFyYWcuc2hldHllQGhpdGFjaGlkcy5jb218MjczYjNhZGRiYzc0NDBjNWE4ZmEwOGRkYWQ3YTBhNTF8MTg3OTFlMTc2MTU5NGY1MmE4ZDRkZTgxNGNhODI4NGF8MHwwfDYzODg1NzQ2MTk0ODg4MDk1NnxVbmtub3dufFRXRnBiR1pzYjNkOGV5SkZiWEIwZVUxaGNHa2lPblJ5ZFdVc0lsWWlPaUl3TGpBdU1EQXdNQ0lzSWxBaU9pSlhhVzR6TWlJc0lrRk9Jam9pVFdGcGJDSXNJbGRVSWpveWZRPT18MHx8fA%3d%3d&sdata=NkQvdXIyZEw5dElSUlhTS2lRbk41UFlBaEJJRG9JUkxiV1BkejV1eFBmaz0%3d'
+  },
+  {
+    id: 'agent19',
+    name: 'ShInE (Shannon Intelligence Engine)',
+    description: 'Intelligent agent that mines code repositories to infer relationships between files and generates structured chapter-wise explanations of the codebase, aiding onboarding and legacy code comprehension.',
+    businessFunctionId: 'func1',
+    businessUnitId: 'bu1',
+    sourceId: 'src1',
+    status: 'active',
+    createdAt: '2025-06-18',
+    lastActive: '2025-06-18',
+    performance: {
+      successRate: 90,
+      responseTime: 5,
+      completedTasks: 15,
+    },
+    type: 'Generative AI',
+    version: '1.0.0',
+    owner: 'Sai Subramanian',
+    cost: 0.08,
+    demoUrl: 'https://code-generator-frontend.bluerock-9517cb0a.eastus.azurecontainerapps.io/'
   }
 ];
 
