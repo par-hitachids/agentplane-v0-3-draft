@@ -423,7 +423,7 @@ export const agents: Agent[] = [
   {
     id: 'agent16',
     name: 'Oddziala Banking Assistant',
-    description: 'Oddziała Banking Assistant is an AI-powered virtual assistant designed to help users with everyday banking tasks through natural, conversational interactions. It provides services like checking account balances, exploring investment options, scheduling branch appointments, and connecting with live agents—delivering a seamless and personalized banking experience across voice and text channels.',
+    description: 'AI-powered assistant that helps users manage banking tasks like balance checks, investments, and appointments through natural voice or text conversations.',
     businessFunctionId: 'func1',
     businessUnitId: 'bu2',
     sourceId: 'src1',
@@ -444,8 +444,8 @@ export const agents: Agent[] = [
   {
     id: 'agent17',
     name: 'GenBI DataBricks Genie',
-    description: 'GenBI Databricks Genie is an AI-powered analytics assistant built on Databricks that enables users to ask natural language questions and instantly get insights in the form of charts, summaries, and reports. It simplifies complex data exploration, helping business users and analysts make data-driven decisions without writing code.',
-    businessFunctionId: 'func1',
+    description: 'AI analytics assistant on Databricks that turns natural language questions into instant visual insights, making data exploration easy for business users.',
+    businessFunctionId: 'func5',
     businessUnitId: 'bu1',
     sourceId: 'src1',
     status: 'active',
@@ -465,8 +465,8 @@ export const agents: Agent[] = [
   {
     id: 'agent18',
     name: 'Contract Assistant',
-    description: 'Contract Assistant is an AI-driven solution that enables users to search, summarize, and understand contract documents stored in SharePoint using natural language. Integrated with Microsoft Copilot, it extracts key terms, dates, vendor details, and region-specific clauses, providing quick answers and insights while respecting role-based access controls and metadata. Ideal for legal, procurement, and compliance teams.',
-    businessFunctionId: 'func1',
+    description: 'AI assistant that summarizes and answers questions about contracts stored in SharePoint, using Microsoft Copilot while respecting metadata and access controls.',
+    businessFunctionId: 'func6',
     businessUnitId: 'bu1',
     sourceId: 'src1',
     status: 'active',
